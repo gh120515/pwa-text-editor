@@ -27,7 +27,7 @@ export const putDb = async (content) => {
   const store = tx.objectStore('jate');
 
   // Use the .put() method to get all data in the database.
-  const request = store.put({ content });
+  const request = store.put({ id: 1, value: content });
 
   // Get confirmation of the request.
   const result = await request;
