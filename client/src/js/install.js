@@ -31,7 +31,6 @@ butInstall.addEventListener('click', async () => {
 
 // Handler for the `appinstalled` event
 window.addEventListener('appinstalled', (event) => {
-    textHeader.textContent = 'Successfully installed!';
     console.log('Install done 👍', 'appinstalled', event);
     // Clear prompt
     window.deferredPrompt = null;

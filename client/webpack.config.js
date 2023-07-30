@@ -21,7 +21,7 @@ module.exports = () => {
       // Webpack plugin that generates the html file and injects the bundles. 
       new HtmlWebpackPlugin({
         template: './index.html',
-        title: 'Just Another Text Editor'
+        title: 'JATE'
       }),
      
       // Injects custom service worker

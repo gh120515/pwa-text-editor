@@ -32,7 +32,7 @@ registerRoute(
   ({ request }) => ['style', 'script', 'worker'].includes(request.destination),
   new StaleWhileRevalidate({
     // Name of the cache storage.
-    cacheName: 'asset-cache',
+    cacheName: 'jate-asset-cache',
     plugins: [
       new CacheableResponsePlugin({
         statuses: [0, 200],
@@ -41,3 +41,4 @@ registerRoute(
   })
 );
 
+// offlineFallback();
