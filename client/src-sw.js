@@ -35,13 +35,19 @@ registerRoute(
   },
   new StaleWhileRevalidate({
     // Name of the cache storage.
-    cacheName: 'jate-asset-cache',
+    cacheName: 'asset-cache',
     plugins: [
       new CacheableResponsePlugin({
         statuses: [0, 200],
+      }),
+      new ExpirationPlugin({
+        // Only cache requests for a month
+        maxAgeSeconds: 30 * 24 * 60 * 60,
+        // Only cache 100 entries
+        maxEntries: 100,
       }),
     ],
   })
 );
 
-offlineFallback();
+// offlineFallback();
